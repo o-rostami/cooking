@@ -13,6 +13,7 @@ import org.springframework.data.jpa.domain.Specification;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class PaginationExecutor<E> {
 
@@ -39,7 +40,7 @@ public class PaginationExecutor<E> {
     private Sort parsingSortRequest(PagingRequest pagingRequest) {
         List<Sort.Order> orders = new ArrayList<>();
         for (SearchCriteria searchCriteria : pagingRequest.getParams()) {
-            if (searchCriteria.getSortOperation().equals(SortOperation.ASC))
+            if (Objects.nonNull(searchCriteria.getSortOperation()) && searchCriteria.getSortOperation().equals(SortOperation.ASC))
                 orders.add(Sort.Order.asc(searchCriteria.getKey()));
             else
                 orders.add(Sort.Order.desc(searchCriteria.getKey()));

@@ -6,7 +6,7 @@ import org.hibernate.envers.Audited;
 import org.hibernate.envers.NotAudited;
 
 import javax.persistence.*;
-import java.util.Set;
+import java.util.List;
 
 @Audited
 @Setter
@@ -29,8 +29,7 @@ public class RecipeEntity extends BaseEntity<Long> {
     private UserEntity user;
 
     @NotAudited
-    @OneToMany(mappedBy = "recipe", fetch = FetchType.LAZY)
-    private Set<RecipeIngredientEntity> recipeIngredients;
-
+    @OneToMany(mappedBy = "recipe", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<RecipeIngredientEntity> recipeIngredients;
 
 }

@@ -16,7 +16,7 @@ public class RecipeIngredientEntity extends BaseEntity<Long> {
 
     public static final String TABLE_NAME = "RECIPE_INGREDIENT";
 
-    @Column(name = "NAME")
+    @Column(name = "amount")
     private Double amount;
 
     @NotAudited

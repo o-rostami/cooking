@@ -6,8 +6,8 @@ import org.hibernate.envers.Audited;
 import org.hibernate.envers.NotAudited;
 
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 @Audited
 @Setter
@@ -29,7 +29,7 @@ public class UserEntity extends BaseEntity<Long> {
 
     @NotAudited
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
-    Set<RecipeEntity> recipes;
+    List<RecipeEntity> recipes;
 
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(
@@ -37,5 +37,5 @@ public class UserEntity extends BaseEntity<Long> {
             joinColumns = @JoinColumn(name = "USER_ID"),
             inverseJoinColumns = @JoinColumn(name = "ROLE_ID")
     )
-    private Set<RoleEntity> roles = new HashSet<>();
+    private List<RoleEntity> roles = new ArrayList<>();
 }

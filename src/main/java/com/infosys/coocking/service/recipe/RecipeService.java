@@ -1,15 +1,19 @@
-package com.infosys.coocking.service;
+package com.infosys.coocking.service.recipe;
 
 import com.infosys.coocking.model.dto.PagingRequest;
 import com.infosys.coocking.model.dto.PagingResponse;
+import com.infosys.coocking.model.dto.RecipeDto;
+import com.infosys.coocking.model.dto.RecipeIngredientDto;
 import com.infosys.coocking.model.entity.RecipeEntity;
+import com.infosys.coocking.model.entity.RecipeIngredientEntity;
 
 import java.util.List;
+import java.util.Set;
 
 /**
  * A <i>RecipeService</i>. This interface has responsibility to do CRUD action
  * on the recipe <p>
- * The <tt>RecipeService</tt> interface provides one method for fetching the role
+ * The <tt>RecipeService</tt> interface provides six methode for doing its job
  * the role service implemented by <tt>RecipeServiceImpl</tt> class.<p>
  *
  * @author Omid Rostami
@@ -70,4 +74,13 @@ public interface RecipeService {
 
     PagingResponse<RecipeEntity> searchRecipe(PagingRequest pagingRequest);
 
+    /**
+     * adding ingredients to specific Recipe
+     *
+     * @param recipeId contains the id of recipe
+     * @param ingredients contains the list of ingredients
+     * @return the RecipeEntity with added ingredients.
+     */
+
+    RecipeEntity addIngredients(Long recipeId, List<RecipeIngredientEntity> ingredients);
 }

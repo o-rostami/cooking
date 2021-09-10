@@ -45,13 +45,13 @@ public abstract class BaseEntity<I extends Serializable> {
 
     @PrePersist
     private void touchForCreate() {
-        setCreatedBy(SecurityUtils.getCurrentUser());
+        setCreatedBy(SecurityUtils.getCurrentUserName());
         setCreatedDate(LocalDateTime.now());
     }
 
     @PreUpdate
     private void touchForUpdate() {
-        setLastModifiedBy(SecurityUtils.getCurrentUser());
+        setLastModifiedBy(SecurityUtils.getCurrentUserName());
         setLastModifiedDate(LocalDateTime.now());
     }
 

@@ -9,7 +9,7 @@ import java.util.Set;
 @Mapper(componentModel = "spring")
 public interface RecipeIngredientMapper extends BaseMapper {
 
-    RecipeIngredientEntity dtoToEntity(RecipeIngredientDto dto);
+        RecipeIngredientEntity dtoToEntity(RecipeIngredientDto dto);
 
     RecipeIngredientDto entityToDto(RecipeIngredientEntity entity);
 

@@ -26,7 +26,7 @@ import java.util.Collections;
 public class SwaggerConfig {
 
     public static final String JWT_AUTHENTICATION_CONTROLLER_TAG = "user controller for login and register";
-    public static final String RECIPE_CONTROLLER_TAG = "user controller for blocking and unblocking";
+    public static final String RECIPE_CONTROLLER_TAG = "recipe controller for doing CRUD operation";
     public static final String USER_CONTROLLER_TAG = "user controller for blocking and unblocking";
     public static final String PRODUCT_CONTROLLER_TAG = "product controller";
     public static final String COMMENT_CONTROLLER_TAG = "comment controller";
@@ -47,7 +47,7 @@ public class SwaggerConfig {
 
     private ApiInfo getApiInfo() {
         return new ApiInfo(
-                "EGS",
+                "Infosys",
                 "This application provides api(s) to create and maintain services",
                 "1.0",
                 "all right reserved to",

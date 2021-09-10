@@ -1,8 +1,10 @@
 package com.infosys.coocking.config;
 
+import com.infosys.coocking.model.entity.IngredientEntity;
 import com.infosys.coocking.model.entity.MeasurementUnitEntity;
 import com.infosys.coocking.model.entity.RoleEntity;
 import com.infosys.coocking.model.entity.UserEntity;
+import com.infosys.coocking.repository.IngredientRepository;
 import com.infosys.coocking.repository.MeasurementUnitRepository;
 import com.infosys.coocking.repository.RoleRepository;
 import com.infosys.coocking.repository.UserRepository;
@@ -25,6 +27,7 @@ public class DbInit {
     private final MeasurementUnitRepository measurementUnitRepository;
     private final UserRepository userRepository;
     private final RoleRepository roleRepository;
+    private final IngredientRepository ingredientRepository;
 
     @Value("${role.admin}")
     private String roleAdmin;
@@ -37,32 +40,57 @@ public class DbInit {
 
 
     @Autowired
-    public DbInit(MeasurementUnitRepository measurementUnitRepository, UserRepository userRepository, RoleRepository roleRepository) {
+    public DbInit(
+            MeasurementUnitRepository measurementUnitRepository,
+            UserRepository userRepository,
+            RoleRepository roleRepository,
+            IngredientRepository ingredientRepository) {
         this.measurementUnitRepository = measurementUnitRepository;
         this.userRepository = userRepository;
         this.roleRepository = roleRepository;
+        this.ingredientRepository = ingredientRepository;
+
     }
 
     @PostConstruct
     private void populateMeasurementUnit() {
         MeasurementUnitEntity categoryA = new MeasurementUnitEntity();
-        categoryA.setName("Category A");
+        categoryA.setName("Cup");
         measurementUnitRepository.save(categoryA);
 
         MeasurementUnitEntity categoryB = new MeasurementUnitEntity();
-        categoryB.setName("Category B");
+        categoryB.setName("Pints");
         measurementUnitRepository.save(categoryB);
 
         MeasurementUnitEntity categoryC = new MeasurementUnitEntity();
-        categoryC.setName("Category C");
+        categoryC.setName("Tablespoon");
         measurementUnitRepository.save(categoryC);
 
         MeasurementUnitEntity categoryD = new MeasurementUnitEntity();
-        categoryD.setName("Category D");
+        categoryD.setName("Gallon");
         measurementUnitRepository.save(categoryD);
-
-
     }
+
+
+    @PostConstruct
+    private void populateIngredient() {
+        IngredientEntity ingredientA = new IngredientEntity();
+        ingredientA.setName("Salt");
+        ingredientRepository.save(ingredientA);
+
+        IngredientEntity ingredientB = new IngredientEntity();
+        ingredientB.setName("Paper");
+        ingredientRepository.save(ingredientB);
+
+        IngredientEntity ingredientC = new IngredientEntity();
+        ingredientC.setName("Rice");
+        ingredientRepository.save(ingredientC);
+
+        IngredientEntity ingredientD = new IngredientEntity();
+        ingredientD.setName("Oil");
+        ingredientRepository.save(ingredientD);
+    }
+
 
     @PostConstruct
     private void populateUserRole() {
