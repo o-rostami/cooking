@@ -17,11 +17,11 @@ public class IngredientEntity extends BaseEntity<Long> {
 
     public static final String TABLE_NAME = "INGREDIENT";
 
-    @Column(name = "NAME",unique = true)
+    @Column(name = "NAME", unique = true)
     private String name;
 
     @NotAudited
-    @OneToMany(mappedBy = "ingredient", fetch = FetchType.LAZY,cascade = CascadeType.ALL,orphanRemoval = true)
+    @OneToMany(mappedBy = "ingredient", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
     private List<RecipeIngredientEntity> recipeIngredients;
 
 }

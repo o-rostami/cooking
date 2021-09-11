@@ -28,10 +28,7 @@ public class SwaggerConfig {
     public static final String JWT_AUTHENTICATION_CONTROLLER_TAG = "user controller for login and register";
     public static final String RECIPE_CONTROLLER_TAG = "recipe controller for doing CRUD operation";
     public static final String USER_CONTROLLER_TAG = "user controller for blocking and unblocking";
-    public static final String PRODUCT_CONTROLLER_TAG = "product controller";
-    public static final String COMMENT_CONTROLLER_TAG = "comment controller";
-    public static final String RATE_CONTROLLER_TAG = "rate controller";
-    public static final String PRODUCT_PER_CATEGORY_CONTROLLER_TAG = "product per category controller";
+    public static final String INGREDIENT_CONTROLLER_TAG = "ingredient controller for doing CRUD operation";
 
 
     @Bean

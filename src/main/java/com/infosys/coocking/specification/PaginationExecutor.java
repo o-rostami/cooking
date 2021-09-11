@@ -39,12 +39,13 @@ public class PaginationExecutor<E> {
 
     private Sort parsingSortRequest(PagingRequest pagingRequest) {
         List<Sort.Order> orders = new ArrayList<>();
-        for (SearchCriteria searchCriteria : pagingRequest.getParams()) {
-            if (Objects.nonNull(searchCriteria.getSortOperation()) && searchCriteria.getSortOperation().equals(SortOperation.ASC))
-                orders.add(Sort.Order.asc(searchCriteria.getKey()));
-            else
-                orders.add(Sort.Order.desc(searchCriteria.getKey()));
-        }
+        if (Objects.nonNull(pagingRequest.getParams()) && !pagingRequest.getParams().isEmpty())
+            for (SearchCriteria searchCriteria : pagingRequest.getParams()) {
+                if (Objects.nonNull(searchCriteria.getSortOperation()) && searchCriteria.getSortOperation().equals(SortOperation.ASC))
+                    orders.add(Sort.Order.asc(searchCriteria.getKey()));
+                else
+                    orders.add(Sort.Order.desc(searchCriteria.getKey()));
+            }
         return Sort.by(orders);
     }
 

@@ -67,6 +67,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/recipe/**").hasAnyAuthority("USER")
                 .antMatchers("/user/**").hasAnyAuthority("ADMIN")
+                .antMatchers("/ingredient/**").hasAnyAuthority("ADMIN")
                 .antMatchers(allowedUrls.toArray(new String[0])).permitAll()
                 .and().authorizeRequests().anyRequest().
                 authenticated().and().

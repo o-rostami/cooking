@@ -40,10 +40,6 @@ public class SecurityUtils {
     }
 
 
-
-
-
-
     public static UserEntity getCurrentUser() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         if (Objects.nonNull(authentication) && Objects.nonNull(authentication.getName())) {
