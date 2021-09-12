@@ -2,13 +2,10 @@ package com.infosys.coocking.service.recipe;
 
 import com.infosys.coocking.model.dto.PagingRequest;
 import com.infosys.coocking.model.dto.PagingResponse;
-import com.infosys.coocking.model.dto.RecipeDto;
-import com.infosys.coocking.model.dto.RecipeIngredientDto;
 import com.infosys.coocking.model.entity.RecipeEntity;
 import com.infosys.coocking.model.entity.RecipeIngredientEntity;
 
 import java.util.List;
-import java.util.Set;
 
 /**
  * A <i>RecipeService</i>. This interface has responsibility to do CRUD action
@@ -63,7 +60,7 @@ public interface RecipeService {
      *
      * @return the Recipe list.
      */
-    List<RecipeEntity> getAllProducts();
+    List<RecipeEntity> getAllRecipe();
 
     /**
      * Returns the details of Recipe based on the filed searched
@@ -77,7 +74,7 @@ public interface RecipeService {
     /**
      * adding ingredients to specific Recipe
      *
-     * @param recipeId contains the id of recipe
+     * @param recipeId    contains the id of recipe
      * @param ingredients contains the list of ingredients
      * @return the RecipeEntity with added ingredients.
      */

@@ -1,0 +1,336 @@
+{
+	"variables": [],
+	"info": {
+		"name": "cooking",
+		"_postman_id": "3e028a62-5e14-ef7f-765e-62ee8ac63fe9",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:8080/auth/register",
+			"request": {
+				"url": "localhost:8080/auth/register",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"userName\":\"omid\",\n\t\"password\":\"123456\",\n\t\"email\": \"test@test.com\"\n\t\n}\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/auth/login/user ",
+			"request": {
+				"url": "localhost:8080/auth/login",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic b21pZDoxMjM0NTY=",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"userName\":\"omid1\",\n\t\"password\":\"123456\"\n\n\t\n}\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/user/block/2",
+			"request": {
+				"url": "localhost:8080/user/block/2",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTYzMTA2NTQyNiwiaWF0IjoxNjMxMDQ3NDI2fQ.g1Q6XkQiAZeKG7Sszwrd4TQluMTeCwMfNf3TS2RobJjtutqaao6a0ijh9RkLHr2Afiy83KmlmLwBJZ9VrjRESQ",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/auth/login/admin",
+			"request": {
+				"url": "localhost:8080/auth/login",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\t\"userName\":\"admin\",\n\t\"password\":\"password\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/user/unblock/2",
+			"request": {
+				"url": "localhost:8080/user/unblock/2",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/recipe",
+			"request": {
+				"url": "localhost:8080/recipe/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJvbWlkIiwiZXhwIjoxNjMxMzA1NjQ1LCJpYXQiOjE2MzEyODc2NDV9.dJVD5EZFL4ahpYRBUYBqNiR5hSvhSZ6cDc-J1rMS72nvs3zUkglzVzDfwqzT5ZeRcgXeK6yxFgyTJxgxUPQNKQ",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"instructions\": \"string\",\n  \"name\": \"stringqwa\"\n }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/recipe/1",
+			"request": {
+				"url": "localhost:8080/recipe/1",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJvbWlkIiwiZXhwIjoxNjMxMzAwMTQ4LCJpYXQiOjE2MzEyODIxNDh9.aTCNb73dpB1Mdfvk0yoo-M2HsyVkoeQnxtP-p1aiWe7FA50TAINAUE4QT3mWU-LNI3vPL_Cg2UiNjtSbT8R85g",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/recipe/1",
+			"request": {
+				"url": "localhost:8080/recipe/1",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJvbWlkIiwiZXhwIjoxNjMxMzAxNTYzLCJpYXQiOjE2MzEyODM1NjN9.68T7igT_exepze0YmP9faOXH0oi36aohfhVqW-BZN9cxaT6l29M-dUyYcwNF2O8BtQzlI3iaJqLJml1SACVFNw",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/recipe/",
+			"request": {
+				"url": "localhost:8080/recipe/",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJvbWlkIiwiZXhwIjoxNjMxMzAwMTQ4LCJpYXQiOjE2MzEyODIxNDh9.aTCNb73dpB1Mdfvk0yoo-M2HsyVkoeQnxtP-p1aiWe7FA50TAINAUE4QT3mWU-LNI3vPL_Cg2UiNjtSbT8R85g",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/recipe/search",
+			"request": {
+				"url": "localhost:8080/recipe/search",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJvbWlkMSIsImV4cCI6MTYzMTMwMzA0NywiaWF0IjoxNjMxMjg1MDQ3fQ.a9XqtkLoLvaqQDfFwo6vBEMDz8tir7U_3WENYUGIxOHsgHWK2AdWKU0UcEnJ9mHxKVcAhVOi6ViYBP3cFWpY9A",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"size\": 10,\n  \"start\": 0\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/recipe/addIngredients/1",
+			"request": {
+				"url": "localhost:8080/recipe/addIngredients/1",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJvbWlkIiwiZXhwIjoxNjMxMzA1MjMxLCJpYXQiOjE2MzEyODcyMzF9.DbbBP4upb7OQ8OCp95Mubz2jAgOsi1bMhIASww5xdgJqEXSf_7jBeS02kqTrEKaq1UNxWAjhg7KOSFTH7-hc5A",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[{\n\t\"amount\":10,\n\t\"ingredient\":{\n\t\t\"id\":2\n\t},\n\t\"measurementUnit\":{\n\t\t\"id\":2\n\t}\n\t\n},\n{\n\t\"amount\":5,\n\t\"ingredient\":{\n\t\t\"id\":1\n\t},\n\t\"measurementUnit\":{\n\t\t\"id\":1\n\t}\n\t\n}\n]"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/ingredient/1",
+			"request": {
+				"url": "localhost:8080/ingredient/1",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTYzMTM5NTU2NiwiaWF0IjoxNjMxMzc3NTY2fQ.XyFB2lcurnUZbJ2uJBP61crlf0KgSIrKIFzHXwFnbShpZC5nEbZg9JDFqmVFdiFZgT73qi0JvnzzeZW_XqGy_Q",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/ingredient/",
+			"request": {
+				"url": "localhost:8080/ingredient/",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTYzMTM5NTU2NiwiaWF0IjoxNjMxMzc3NTY2fQ.XyFB2lcurnUZbJ2uJBP61crlf0KgSIrKIFzHXwFnbShpZC5nEbZg9JDFqmVFdiFZgT73qi0JvnzzeZW_XqGy_Q",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/ingredient/1",
+			"request": {
+				"url": "localhost:8080/ingredient/1",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTYzMTM5NTU2NiwiaWF0IjoxNjMxMzc3NTY2fQ.XyFB2lcurnUZbJ2uJBP61crlf0KgSIrKIFzHXwFnbShpZC5nEbZg9JDFqmVFdiFZgT73qi0JvnzzeZW_XqGy_Q",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/ingredient/",
+			"request": {
+				"url": "localhost:8080/ingredient/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTYzMTM5NjEzOCwiaWF0IjoxNjMxMzc4MTM4fQ.dEvIyfrV6YzxabSA6yKvcoZ3wfrguRiru9h_xtyQIWFAWLtvxq2UfvYpe1lK4q2yDX3Q41nGWGvCFyH4TwhFVQ",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"garlic\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/ingredient/search",
+			"request": {
+				"url": "localhost:8080/ingredient/search",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTYzMTM5NjEzOCwiaWF0IjoxNjMxMzc4MTM4fQ.dEvIyfrV6YzxabSA6yKvcoZ3wfrguRiru9h_xtyQIWFAWLtvxq2UfvYpe1lK4q2yDX3Q41nGWGvCFyH4TwhFVQ",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"size\": 10,\n  \"start\": 0,\n  \"params\":[{\n  \t\"key\":\"name\",\n  \t\"operation\":\"eq\",\n  \"value\"\t:\"Salt\"\n  }]\n\t\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

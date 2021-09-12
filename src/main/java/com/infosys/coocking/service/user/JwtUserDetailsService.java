@@ -10,7 +10,6 @@ import com.infosys.coocking.model.entity.MyUserDetails;
 import com.infosys.coocking.model.entity.UserEntity;
 import com.infosys.coocking.repository.UserRepository;
 import com.infosys.coocking.service.role.RoleService;
-import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -22,25 +21,24 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Objects;
 
 @Service
-@NoArgsConstructor
 public class JwtUserDetailsService implements UserDetailsService {
 
     @Autowired
     private AuthenticationManager authenticationManager;
     @Autowired
     private JwtTokenUtil jwtTokenUtil;
-
     @Autowired
     private UserRepository userRepository;
     @Autowired
     private RoleService roleService;
-
     @Autowired
     private PasswordEncoder passwordEncoder;
+
 
     @Value("${role.user}")
     private String roleUser;
@@ -74,6 +72,7 @@ public class JwtUserDetailsService implements UserDetailsService {
         return new JwtResponse(jwtToken);
     }
 
+    @Transactional
     public Long register(UserDto request) {
         UserEntity user = userRepository.findByUserName(request.getUserName());
         if (Objects.isNull(user)) {
@@ -109,4 +108,5 @@ public class JwtUserDetailsService implements UserDetailsService {
         userEntity.setBlocked(Boolean.TRUE);
         userRepository.save(userEntity);
     }
+
 }

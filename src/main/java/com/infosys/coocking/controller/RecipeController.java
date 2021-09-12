@@ -56,7 +56,7 @@ public class RecipeController {
             produces = MediaType.APPLICATION_JSON_VALUE,
             response = RecipeDto.class, httpMethod = "GET")
     public List<RecipeDto> getAllProducts() {
-        return recipeService.getAllProducts().stream().map(mapper::entityToDto).collect(Collectors.toList());
+        return recipeService.getAllRecipe().stream().map(mapper::entityToDto).collect(Collectors.toList());
     }
 
     @DeleteMapping(value = "{id}")

@@ -83,7 +83,7 @@ public class RecipeServiceImpl implements RecipeService {
     }
 
     @Override
-    public List<RecipeEntity> getAllProducts() {
+    public List<RecipeEntity> getAllRecipe() {
         return repository.findByUserId(SecurityUtils.getCurrentUser().getId());
     }
 
