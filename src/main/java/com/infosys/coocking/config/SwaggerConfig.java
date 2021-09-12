@@ -29,6 +29,7 @@ public class SwaggerConfig {
     public static final String RECIPE_CONTROLLER_TAG = "recipe controller for doing CRUD operation";
     public static final String USER_CONTROLLER_TAG = "user controller for blocking and unblocking";
     public static final String INGREDIENT_CONTROLLER_TAG = "ingredient controller for doing CRUD operation";
+    public static final String  MEASUREMENT_UNIT_CONTROLLER_TAG = " Measurement Unit controller for doing CRUD operation";
 
 
     @Bean

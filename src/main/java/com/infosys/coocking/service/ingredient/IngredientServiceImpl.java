@@ -47,7 +47,7 @@ public class IngredientServiceImpl implements IngredientService {
         if (Objects.nonNull(ingredientEntity.getId())) {
             throw new BadRequestException("ID.IS.NOT.NULL", "ID");
         }
-        checkDuplicateIngredientName(ingredientEntity);
+        checkDuplicateName(ingredientEntity);
         return repository.save(ingredientEntity).getId();
     }
 
@@ -60,12 +60,12 @@ public class IngredientServiceImpl implements IngredientService {
         if (!ingredientEntity.getVersion().equals(dbIngredient.getVersion())) {
             throw new BusinessException("VERSION.IS.NOT.VALID", "version");
         }
-        checkDuplicateIngredientName(ingredientEntity);
+        checkDuplicateName(ingredientEntity);
         dbIngredient.setName(ingredientEntity.getName());
         return repository.save(dbIngredient);
     }
 
-    private void checkDuplicateIngredientName(IngredientEntity ingredientEntity) {
+    private void checkDuplicateName(IngredientEntity ingredientEntity) {
         if (repository.findByName(ingredientEntity.getName()).isPresent()) {
             throw new BusinessException("INGREDIENT.IS.DUPLICATE");
         }
