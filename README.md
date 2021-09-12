@@ -1,7 +1,7 @@
 # Cooking
 
 <h3>manage your favourite recipes.</h3>
-***
+
 
 This project has been implemented as an assigment. In this project two popular frameworks including Spring boot and
 hibernate used to develop the back end part.The project consists of two types of roles including admin and user. Admin
